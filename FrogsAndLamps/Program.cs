@@ -17,7 +17,7 @@ namespace FrogsAndLamps
                 lamps[i] = i + 1;
             }
 
-            Press(40);
+            Press(30);
             Console.ReadLine();
             
 
