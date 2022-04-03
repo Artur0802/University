@@ -2,40 +2,17 @@
 {
     public class Student
     {
-        private SubjectOrSpecialization _specialization;
-        private string _firstName;
-        private string _lastName;
-        private int _year;
-
-        public string FirstName
-        {
-            get
-            {
-                return _firstName;
-            }
-        }
-        public string LastName
-        {
-            get
-            {
-                return _lastName;
-            }
-        }
-        public SubjectOrSpecialization Specialization
-        {
-            get
-            {
-                return _specialization;
-            }
-        }
-        public int Year { get; set; }
+        public string FirstName { get; }
+        public string LastName { get; }
+        public SubjectOrSpecialization Specialization { get; }
+        public int Year { get; }
 
         public Student(string firstname, string lastName, SubjectOrSpecialization specialization, int year)
         {
-            _firstName = firstname;
-            _lastName = lastName;
-            _specialization = specialization;
-            _year = year;
+            FirstName = firstname;
+            LastName = lastName;
+            Specialization = specialization;
+            Year = year;
         }
 
         public void AddToLecturerCandidates(Lecturer lecturer)

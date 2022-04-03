@@ -6,8 +6,12 @@ namespace Geometry
     {
         static void Main(string[] args)
         {
-            var figure1 = new Figure(FigureType.Rectangle);
-            figure1.CalculatePerimeter();
+            var square = new Square(5);
+            square.CalculatePerimeter();
+            var rectangle = new Rectangle(2, 4);
+            rectangle.CalculatePerimeter();
+            var triangle = new Triangle(10, 20, 30);
+            triangle.CalculatePerimeter();
             Console.ReadLine();
         }
     }

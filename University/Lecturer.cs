@@ -24,19 +24,27 @@ namespace University
 
         public void MakeGroup()
         {
-            if (Candidates.Count >= _minCandidatesCount && Candidates.Any(s => s.Specialization == _subject))
+            if (Candidates.Count >= _minCandidatesCount)
             {
-                _group = Candidates.Where(s => s.Specialization == _subject).ToList();
-                Console.WriteLine("{0} group has been made up for {1} {2}." + Environment.NewLine + "Students in the group:" + Environment.NewLine, _subject, _firstName, _lastName);
-                foreach (var student in _group)
+                if (Candidates.Any(s => s.Specialization == _subject))
                 {
-                    Console.WriteLine("{0} {1}, year: {2}", student.FirstName, student.LastName, student.Year);
+                    _group = Candidates.Where(s => s.Specialization == _subject).ToList();
+                    Console.WriteLine("{0} group has been made up for {1} {2}." + Environment.NewLine + "Students in the group:" + Environment.NewLine, _subject, _firstName, _lastName);
+                    foreach (var student in _group)
+                    {
+                        Console.WriteLine("{0} {1}, year: {2}.", student.FirstName, student.LastName, student.Year);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Impossible to make {0} group for lector {1} {2}.", _subject, _firstName, _lastName);
+                    Console.WriteLine("There is not any student which specialization meets lecturers subject." + Environment.NewLine);
                 }
             }
             else
             {
                 Console.WriteLine("Impossible to make {0} group for lector {1} {2}", _subject, _firstName, _lastName);
-                Console.WriteLine("Amount of candidates is not enough or their specialization doesn't meet lecturers subject" + Environment.NewLine);                
+                Console.WriteLine("Amount of candidates is not enough." + Environment.NewLine);                
             }
         }
     }

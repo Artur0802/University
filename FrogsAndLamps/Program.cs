@@ -32,7 +32,7 @@ namespace FrogsAndLamps
                 }
                 else
                 {
-                    Console.WriteLine("Frog with such a number is absent");
+                    Console.WriteLine("Frog with such a number is absent. Only number 1-100 are allowed.");
                 }
             }
         }
